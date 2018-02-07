@@ -1,0 +1,86 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+	 sourceCompatibility = 1.7
+	 targetCompatibility = 1.7
+	 
+	 
+	repositories {
+		 				mavenCentral()
+				}
+
+	dependencies {
+	
+	 	 fileTree(dir: 'libs', include: '*.jar')
+	
+		testCompile group: 'junit', name: 'junit', version: '4.12'
+		testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.1'
+	   	testCompile group: 'com.google.code.gson', name: 'gson', version: '2.8.0'
+		testCompile group: 'org.testng', name: 'testng', version: '6.9.10'
+		testCompile group: 'com.google.gdata', name: 'core', version: '1.47.1'
+		testCompile group: 'com.relevantcodes', name: 'extentreports', version: '2.41.1'
+		testCompile group: 'org.yaml', name: 'snakeyaml', version: '1.16'
+		testCompile group: 'javax.mail', name: 'javax.mail-api', version: '1.5.5'
+		testCompile group: 'activation', name: 'activation', version: '1.0.2'
+	    testCompile group: 'org.json', name: 'json', version: '20160810'
+		testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.4'
+		testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.4'
+		testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.4'
+		testCompile group: 'info.cukes', name: 'gherkin', version: '2.12.2'
+		testCompile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+		testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+		testCompile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.2.0'
+		testCompile 'io.rest-assured:json-schema-validator:3.0.1'
+		testCompile 'io.rest-assured:spring-mock-mvc:3.0.1'
+		testCompile 'io.rest-assured:scala-support:3.0.1'
+		testCompile group: 'javax.json', name: 'javax.json-api', version: '1.0'
+		testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.26'
+		testCompile group: 'log4j', name: 'log4j', version: '1.2.17'
+		testCompile group: 'com.aventstack', name: 'extentreports', version: '3.0.3'
+		// https://mvnrepository.com/artifact/javax.mail/javax.mail-api
+		compile group: 'javax.mail', name: 'javax.mail-api', version: '1.5.2'
+	
+		// https://mvnrepository.com/artifact/javax.activation/activation
+		compile group: 'javax.activation', name: 'activation', version: '1.1'
+	
+		
+		// https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson2
+		compile group: 'com.google.http-client', name: 'google-http-client-jackson2', version: '1.20.0'
+	
+		// https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson
+		compile group: 'com.google.http-client', name: 'google-http-client-jackson', version: '1.20.0'
+	
+		// https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+		compile group: 'com.google.api-client', name: 'google-api-client', version: '1.20.0'
+	
+		// https://mvnrepository.com/artifact/org.apache.wink/wink-json4j
+		compile group: 'org.apache.wink', name: 'wink-json4j', version: '1.2.1-incubating'
+	
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '2.53.0'
+	
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '2.53.0'
+	
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.53.0'
+	compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.9.12'
+	compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.12'
+	
+	
+	}
+
+
+
+	test{
+			  testLogging.showStandardStreams = true	
+			  
+			  systemProperties System.getProperties()
+			  
+			  
+			  // enable TestNG support (default is JUnit)    suites '/Users/abinaya/git/JbillingTest/TestNGSuite.xml'
+			
+			useTestNG(){
+				
+				print 'running the tests now'
+			}	
+	  }
+
+	test.outputs.upToDateWhen {false}
+
